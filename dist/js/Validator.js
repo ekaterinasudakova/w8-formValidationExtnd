@@ -14,6 +14,17 @@ var Validator = function () {
             console.warn('Couldn\'t find an element with selector', selector);
             return false;
         }
+        // if(this.$field){
+        //     this.$blurb = document.querySelector(".error-message");
+        //     console.log(`If there is no existing error container..`)
+        //     if (!this.$blurb){
+        //         console.log(`Let's create one`)
+        //         this.$errorContainer = document.createElement('div');
+        //         this.$errorContainer.classList.add('error-message');
+        //         this.$field.parentElement.appendChild(this.$errorContainer);
+        //     }
+        // }
+
 
         //make element to show the errors in
         this.$errorContainer = document.createElement('div');

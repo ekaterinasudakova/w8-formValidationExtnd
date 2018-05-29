@@ -7,12 +7,22 @@ class Validator{
             console.warn(`Couldn't find an element with selector`, selector)
             return false
         }
+        // if(this.$field){
+        //     this.$blurb = document.querySelector(".error-message");
+        //     console.log(`If there is no existing error container..`)
+        //     if (!this.$blurb){
+        //         console.log(`Let's create one`)
+        //         this.$errorContainer = document.createElement('div');
+        //         this.$errorContainer.classList.add('error-message');
+        //         this.$field.parentElement.appendChild(this.$errorContainer);
+        //     }
+        // }
+        
 
         //make element to show the errors in
         this.$errorContainer = document.createElement('div');
         this.$errorContainer.classList.add('error-message');
         this.$field.parentElement.appendChild(this.$errorContainer);
-
 
         //keep track of errors
         this.errors = [];
@@ -53,17 +63,17 @@ class Validator{
     
 
         //STYLING
-        showErrors(){
-            if(this.errors.length){
-                this.$field.style.borderColor = `red`;
-                this.$errorContainer.innerHTML = "";
-                this.errors.forEach((error)=>{
-                    this.$errorContainer.innerHTML += '<p>' + error + '</p>';
-                }) 
-            } else {
-                this.$field.style.borderColor = `green`;
-                this.$errorContainer.innerHTML = "";
-            }
+    showErrors(){
+        if(this.errors.length){
+            this.$field.style.borderColor = `red`;
+            this.$errorContainer.innerHTML = "";
+            this.errors.forEach((error)=>{
+                this.$errorContainer.innerHTML += '<p>' + error + '</p>';
+            }) 
+        } else {
+            this.$field.style.borderColor = `green`;
+            this.$errorContainer.innerHTML = "";
         }
+    }
 
 }
