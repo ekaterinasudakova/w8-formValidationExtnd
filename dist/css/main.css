@@ -1,0 +1,167 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 1. Main Layout ================================= */
+* {
+	box-sizing: border-box;
+}
+
+/* 2. Content ================================= */
+.background {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background: #2b97a4;
+	transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+}
+
+.background--on {
+	background: #f87a7b;
+	transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+}
+
+.toggle-body {
+	width: 6rem;
+	height: 3rem;
+	position: absolute;
+	top: calc(30% - 4rem / 2);
+	left: calc(65% - 7rem / 2);
+	background: white;
+	border-radius: 2rem;
+	animation: angle-reverse 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+}
+
+.toggle-body--on {
+	animation: angle 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+	animation-direction: alternate;
+}
+
+.toggle-btn {
+	width: 1.95rem;
+	height: 1.95rem;
+	position: absolute;
+	top: calc(50% - 2rem / 2);
+	left: calc(27% - 2rem / 2);
+	background: white;
+	border-radius: 2rem;
+	background: #2b97a4;
+	cursor: pointer;
+	transform: translateX(0);
+	transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+}
+
+.toggle-btn--on {
+	transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+	transform: translateX(150%);
+	background: #f87a7b;
+}
+
+.MF {
+	position: absolute;
+	right: 255%;
+	top: 25%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	width: 200%;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 70%;
+}
+
+.content h1 {
+	font-family: 'Bowlby One SC', cursive;
+	font-size: 4em;
+	padding: 1.3em 1.3em;
+	padding-bottom: 2em;
+}
+
+.content form {
+	background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	flex-direction: column;
+}
+
+.content form label {
+	padding: 2em 1em;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	margin: 0 2em;
+}
+
+.content form label input {
+	padding: .5em 1em;
+	text-align: center;
+	margin-left: 3em;
+}
+
+/*# sourceMappingURL=main.css.map */

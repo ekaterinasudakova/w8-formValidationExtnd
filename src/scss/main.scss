@@ -1,0 +1,146 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+@import 'reset';
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+
+
+/* 2. Content ================================= */
+
+$pink: #f87a7b;
+$blue: #2b97a4;
+
+$animtime: 1.5s;
+$easing: cubic-bezier(0.68, -0.15, 0.265, 1.35);
+$iteration: 1;
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: $blue;
+  transition: 1.5s $easing;
+}
+.background--on {
+  background: $pink;
+  transition: 1.5s $easing;
+}
+.toggle-body {
+  width: 6rem;
+  height: 3rem;
+  position: absolute;
+  top: calc(30% - 4rem / 2);
+  left: calc(65% - 7rem / 2);
+  background: white;
+  border-radius: 2rem;
+  animation: angle-reverse $animtime $easing;
+}
+.toggle-body--on {
+  animation: angle $animtime $easing;
+  animation-direction: alternate;
+}
+.toggle-btn {
+  width: 1.95rem;
+  height: 1.95rem;
+  position: absolute;
+  top: calc(50% - 2rem / 2);
+  left: calc(27% - 2rem / 2);
+  background: white;
+  border-radius: 2rem;
+  background: $blue;
+  cursor: pointer;
+  transform:  translateX(0);
+  transition: $animtime $easing;
+}
+.toggle-btn--on {
+  transition: $animtime $easing;
+  transform:  translateX(150%);
+  background: $pink;
+}
+
+// @keyframes angle {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   50% {
+//     transform: rotate(45deg);
+//   }
+//   100% {
+//     transform: rotate(0deg);
+//   }
+// }
+// @keyframes angle-reverse {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   50% {
+//     transform: rotate(-45deg);
+//   }
+//   100% {
+//     transform: rotate(0deg);
+//   }
+// }
+
+.MF{
+	position: absolute;
+	right: 255%;
+	top: 25%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	width: 200%;
+
+}
+.content{
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 70%;
+	h1{
+		font-family: 'Bowlby One SC', cursive;
+		font-size: 4em;
+		padding: 1.3em 1.3em;
+		padding-bottom: 2em;
+	}
+
+	form{
+		background-color:rgba($color: #fff, $alpha: .5);
+		display: flex;
+		flex-direction: column;
+		// align-items: center;
+
+		label{
+			padding: 2em 1em;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 1.2em;
+			margin: 0 2em;
+
+			input{
+				padding: .5em 1em;
+				text-align: center;
+				margin-left: 3em;
+			}
+		}
+	}
+}
