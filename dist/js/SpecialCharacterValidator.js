@@ -41,9 +41,12 @@ var SpecialCharacterValidator = function (_Validator) {
 
             for (var i = 0; i != sclChara.length; i++) {
                 // var sclChara = sclChara[i];
-                if (this.$field.value.indexOf(sclChara[i]) != -1) {
-                    this.errors.push('Your password has at least one special character!');
+                if (!this.$field.value.includes(sclChara[i])) {
+                    this.errors.push('Your password needs at least one special character!');
                 }
+                // if((this.$field.value).indexOf(sclChara[i]) > -1){
+                //     this.errors.push(``);
+                // }
             }
 
             // if(this.$field.value.includes(`!`)){
@@ -60,7 +63,7 @@ var SpecialCharacterValidator = function (_Validator) {
             // }
             // if(this.$field.value.includes(`%`)){
             //     this.errors.push(`Remove the % from your password!`);
-            // }
+            // }   
             // if(this.$field.value.includes(`^`)){
             //     this.errors.push(`Remove the ^ from your password!`);
             // }
