@@ -10,3 +10,5 @@ let validatorNumYYYY = new NumberRangeValidator('[name=year]', 1900, new Date().
 
 let validatorPassMatch1 = new MatchValidator('[name=password]', '[name=password2]');
 let validatorPassMatch2 = new MatchValidator('[name=password2]', '[name=password]');
+
+let validatorPassLength = new LengthValidator('[name=password]', 6, 20);

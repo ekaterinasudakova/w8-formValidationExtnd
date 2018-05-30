@@ -10,44 +10,39 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//extended class is same as class but you can overrule methods + functions besides constructor=
+var LengthValidator = function (_Validator) {
+    _inherits(LengthValidator, _Validator);
 
-var MatchValidator = function (_Validator) {
-    _inherits(MatchValidator, _Validator);
+    function LengthValidator(selector, min, max) {
+        _classCallCheck(this, LengthValidator);
 
-    function MatchValidator(selector, otherSelector) {
-        _classCallCheck(this, MatchValidator);
+        // call constructor in Validator()
+        var _this = _possibleConstructorReturn(this, (LengthValidator.__proto__ || Object.getPrototypeOf(LengthValidator)).call(this, selector));
 
-        var _this = _possibleConstructorReturn(this, (MatchValidator.__proto__ || Object.getPrototypeOf(MatchValidator)).call(this, selector));
-
-        console.log("constructor from MatchValidator");
-
-        _this.otherSelector = otherSelector;
-        // console.log(this);
-        // console.log(selector);
-        // console.log(otherSelector);
+        console.log("constructor from LengthValidator");
+        _this.min = min;
+        _this.max = max;
         return _this;
     }
 
-    //RULES FOR EMAIL ONLY
+    //RULES FOR LENGTH ONLY
 
 
-    _createClass(MatchValidator, [{
+    _createClass(LengthValidator, [{
         key: "validate",
         value: function validate() {
-            _get(MatchValidator.prototype.__proto__ || Object.getPrototypeOf(MatchValidator.prototype), "validate", this).call(this);
-            // console.log(this.$field.value);
-
-            this.$otherSelector = document.querySelector(this.otherSelector);
-            // console.log(this.$otherSelector);
-            // console.log(this.$otherSelector.value);
-
-            if (!this.$field.value.match(this.$otherSelector.value)) {
-                this.errors.push("Your passwords don't match");
+            _get(LengthValidator.prototype.__proto__ || Object.getPrototypeOf(LengthValidator.prototype), "validate", this).call(this);
+            console.log(this.$field.value.length);
+            console.log(this.min);
+            if (this.$field.value.length < this.min) {
+                this.errors.push("Your password is too short!");
+            }
+            if (this.$field.value.length > this.max) {
+                this.errors.push("Your password is too long!");
             }
         }
     }]);
 
-    return MatchValidator;
+    return LengthValidator;
 }(Validator);
-//# sourceMappingURL=MatchValidator.js.map
+//# sourceMappingURL=LengthValidator.js.map

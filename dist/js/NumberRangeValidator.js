@@ -21,7 +21,7 @@ var NumberRangeValidator = function (_Validator) {
         // call constructor in Validator()
         var _this = _possibleConstructorReturn(this, (NumberRangeValidator.__proto__ || Object.getPrototypeOf(NumberRangeValidator)).call(this, selector));
 
-        console.log("constructor from EmailValidator");
+        console.log("constructor from NumberRangeValidator");
         _this.min = min;
         _this.max = max;
         return _this;

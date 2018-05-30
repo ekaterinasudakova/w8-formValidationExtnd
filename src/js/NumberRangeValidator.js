@@ -5,7 +5,7 @@ class NumberRangeValidator extends Validator {
 
     constructor(selector, min, max){
         super(selector); // call constructor in Validator()
-        console.log(`constructor from EmailValidator`)
+        console.log(`constructor from NumberRangeValidator`)
         this.min = min;
         this.max = max;
     }

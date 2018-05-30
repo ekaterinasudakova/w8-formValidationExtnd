@@ -10,4 +10,6 @@ var validatorNumYYYY = new NumberRangeValidator('[name=year]', 1900, new Date().
 
 var validatorPassMatch1 = new MatchValidator('[name=password]', '[name=password2]');
 var validatorPassMatch2 = new MatchValidator('[name=password2]', '[name=password]');
+
+var validatorPassLength = new LengthValidator('[name=password]', 6, 20);
 //# sourceMappingURL=main.js.map
