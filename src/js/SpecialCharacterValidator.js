@@ -22,10 +22,12 @@ class SpecialCharacterValidator extends Validator {
             // var sclChara = sclChara[i];
             if(!(this.$field.value).includes(sclChara[i])){
                 this.errors.push(`Your password needs at least one special character!`);
-            }
-            // if((this.$field.value).indexOf(sclChara[i]) > -1){
-            //     this.errors.push(``);
-            // }
+                console.log(this.errors)
+            } 
+            if((this.$field.value).includes(sclChara[i])){
+                this.errors = [];
+            } 
+
 
         }   
 

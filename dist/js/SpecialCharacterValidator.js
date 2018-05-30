@@ -43,10 +43,11 @@ var SpecialCharacterValidator = function (_Validator) {
                 // var sclChara = sclChara[i];
                 if (!this.$field.value.includes(sclChara[i])) {
                     this.errors.push('Your password needs at least one special character!');
+                    console.log(this.errors);
                 }
-                // if((this.$field.value).indexOf(sclChara[i]) > -1){
-                //     this.errors.push(``);
-                // }
+                if (this.$field.value.includes(sclChara[i])) {
+                    this.errors = [];
+                }
             }
 
             // if(this.$field.value.includes(`!`)){
