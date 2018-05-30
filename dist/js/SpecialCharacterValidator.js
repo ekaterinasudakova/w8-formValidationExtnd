@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -21,7 +21,7 @@ var SpecialCharacterValidator = function (_Validator) {
         // call constructor in Validator()
         var _this = _possibleConstructorReturn(this, (SpecialCharacterValidator.__proto__ || Object.getPrototypeOf(SpecialCharacterValidator)).call(this, selector));
 
-        console.log("constructor from DisallowedCharacterValidator");
+        console.log('constructor from SpecialCharacterValidator');
         // console.log(`characters: `, characterArray);
         // console.log(`this.characters: `, this.characterArray)
 
@@ -32,34 +32,45 @@ var SpecialCharacterValidator = function (_Validator) {
 
 
     _createClass(SpecialCharacterValidator, [{
-        key: "validate",
+        key: 'validate',
         value: function validate() {
-            _get(SpecialCharacterValidator.prototype.__proto__ || Object.getPrototypeOf(SpecialCharacterValidator.prototype), "validate", this).call(this);
+            _get(SpecialCharacterValidator.prototype.__proto__ || Object.getPrototypeOf(SpecialCharacterValidator.prototype), 'validate', this).call(this);
 
-            if (this.$field.value.includes("!")) {
-                this.errors.push("Remove the ! from your password!");
+            var sclChara = ['!', '@', '#', '$', '%', '^', '&', '*'];
+            console.log('this.$field.value: ', this.$field.value);
+
+            for (var i = 0; i != sclChara.length; i++) {
+                // var sclChara = sclChara[i];
+                if (this.$field.value.indexOf(sclChara[i]) != -1) {
+                    this.errors.push('Your password has at least one special character!');
+                }
             }
-            if (this.$field.value.includes("@")) {
-                this.errors.push("Remove the @ from your password!");
-            }
-            if (this.$field.value.includes("#")) {
-                this.errors.push("Remove the # from your password!");
-            }
-            if (this.$field.value.includes("$")) {
-                this.errors.push("Remove the $ from your password!");
-            }
-            if (this.$field.value.includes("%")) {
-                this.errors.push("Remove the % from your password!");
-            }
-            if (this.$field.value.includes("^")) {
-                this.errors.push("Remove the ^ from your password!");
-            }
-            if (this.$field.value.includes("&")) {
-                this.errors.push("Remove the & from your password!");
-            }
-            if (this.$field.value.includes("*")) {
-                this.errors.push("Remove the * from your password!");
-            }
+
+            // if(this.$field.value.includes(`!`)){
+            //     this.errors.push(`Remove the ! from your password!`);
+            // }
+            // if(this.$field.value.includes(`@`)){
+            //     this.errors.push(`Remove the @ from your password!`);
+            // }
+            // if(this.$field.value.includes(`#`)){
+            //     this.errors.push(`Remove the # from your password!`);
+            // }
+            // if(this.$field.value.includes(`$`)){
+            //     this.errors.push(`Remove the $ from your password!`);
+            // }
+            // if(this.$field.value.includes(`%`)){
+            //     this.errors.push(`Remove the % from your password!`);
+            // }
+            // if(this.$field.value.includes(`^`)){
+            //     this.errors.push(`Remove the ^ from your password!`);
+            // }
+            // if(this.$field.value.includes(`&`)){
+            //     this.errors.push(`Remove the & from your password!`);
+            // }
+            // if(this.$field.value.includes(`*`)){
+            //     this.errors.push(`Remove the * from your password!`);
+            // }
+
         }
     }]);
 
