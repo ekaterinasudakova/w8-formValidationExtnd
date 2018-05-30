@@ -41,7 +41,8 @@ var MatchValidator = function (_Validator) {
             this.$otherSelector = document.querySelector(this.otherSelector);
             console.log(this.$otherSelector);
             console.log(this.$otherSelector.value);
-            if (!this.$field.value === this.$otherSelector.value) {
+
+            if (!this.$field.value.match(this.$otherSelector.value)) {
                 this.errors.push("Your passwords don't match");
             }
         }
