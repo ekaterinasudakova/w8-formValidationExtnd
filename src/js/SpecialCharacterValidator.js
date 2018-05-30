@@ -27,36 +27,7 @@ class SpecialCharacterValidator extends Validator {
         }
         if(!sclCharaFound){
             this.errors.push(`You need at least one special character in your password`);
-        }
-  
-
-        // if(this.$field.value.includes(`!`)){
-        //     this.errors.push(`Remove the ! from your password!`);
-        // }
-        // if(this.$field.value.includes(`@`)){
-        //     this.errors.push(`Remove the @ from your password!`);
-        // }
-        // if(this.$field.value.includes(`#`)){
-        //     this.errors.push(`Remove the # from your password!`);
-        // }
-        // if(this.$field.value.includes(`$`)){
-        //     this.errors.push(`Remove the $ from your password!`);
-        // }
-        // if(this.$field.value.includes(`%`)){
-        //     this.errors.push(`Remove the % from your password!`);
-        // }   
-        // if(this.$field.value.includes(`^`)){
-        //     this.errors.push(`Remove the ^ from your password!`);
-        // }
-        // if(this.$field.value.includes(`&`)){
-        //     this.errors.push(`Remove the & from your password!`);
-        // }
-        // if(this.$field.value.includes(`*`)){
-        //     this.errors.push(`Remove the * from your password!`);
-        // }
-
-
-        
+        }        
     }
 
 }

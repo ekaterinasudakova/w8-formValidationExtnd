@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -10,48 +10,46 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//extended class is same as class but you can overrule methods + functions besides constructor=
+var UpperLowerValidator = function (_Validator) {
+    _inherits(UpperLowerValidator, _Validator);
 
-var SpecialCharacterValidator = function (_Validator) {
-    _inherits(SpecialCharacterValidator, _Validator);
-
-    function SpecialCharacterValidator(selector) {
-        _classCallCheck(this, SpecialCharacterValidator);
+    function UpperLowerValidator(selector) {
+        _classCallCheck(this, UpperLowerValidator);
 
         // call constructor in Validator()
-        var _this = _possibleConstructorReturn(this, (SpecialCharacterValidator.__proto__ || Object.getPrototypeOf(SpecialCharacterValidator)).call(this, selector));
+        var _this = _possibleConstructorReturn(this, (UpperLowerValidator.__proto__ || Object.getPrototypeOf(UpperLowerValidator)).call(this, selector));
 
-        console.log('constructor from SpecialCharacterValidator');
-        // console.log(`characters: `, characterArray);
-        // console.log(`this.characters: `, this.characterArray)
-
+        console.log("constructor from UpperLowerValidator");
         return _this;
     }
 
     //RULES FOR EMAIL ONLY
 
 
-    _createClass(SpecialCharacterValidator, [{
-        key: 'validate',
+    _createClass(UpperLowerValidator, [{
+        key: "validate",
         value: function validate() {
-            _get(SpecialCharacterValidator.prototype.__proto__ || Object.getPrototypeOf(SpecialCharacterValidator.prototype), 'validate', this).call(this);
+            _get(UpperLowerValidator.prototype.__proto__ || Object.getPrototypeOf(UpperLowerValidator.prototype), "validate", this).call(this);
 
-            var sclChara = ['!', '@', '#', '$', '%', '^', '&', '*'];
-            console.log('this.$field.value: ', this.$field.value);
+            console.log(this.$field.value);
+            var inputValue = this.$field.value;
 
-            var sclCharaFound = false;
-            for (var i = 0; i != sclChara.length; i++) {
-                // var sclChara = sclChara[i];
-                if (this.$field.value.includes(sclChara[i])) {
-                    sclCharaFound = true;
+            var upCharaFound = false;
+            for (var i = 0; i < inputValue.length; i++) {
+                console.log("character from input value: ", inputValue.charAt(i));
+                var inputCharacters = inputValue.charAt(i);
+
+                if (inputCharacters == inputCharacters.toUpperCase()) {
+                    upCharaFound = true;
+                    console.log("we found an uppercase letter!");
                 }
             }
-            if (!sclCharaFound) {
-                this.errors.push('You need at least one special character in your password');
+            if (!upCharaFound) {
+                this.errors.push("You need at least one uppercase character in your password");
             }
         }
     }]);
 
-    return SpecialCharacterValidator;
+    return UpperLowerValidator;
 }(Validator);
-//# sourceMappingURL=SpecialCharacterValidator.js.map
+//# sourceMappingURL=UpperLowerValidator.js.map

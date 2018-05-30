@@ -16,3 +16,5 @@ let validatorPassLength = new LengthValidator('[name=password]', 6, 20);
 let validatorPassBadChara = new DisallowedCharacterValidator('[name=password]', ['-','+','=','`','~','|','/','>','<']);
 
 let validatorPassSclChara = new SpecialCharacterValidator('[name=password]');
+
+let validatorPassUpLow = new UpperLowerValidator ('[name=password]');
