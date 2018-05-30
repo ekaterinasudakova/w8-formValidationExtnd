@@ -12,3 +12,5 @@ let validatorPassMatch1 = new MatchValidator('[name=password]', '[name=password2
 let validatorPassMatch2 = new MatchValidator('[name=password2]', '[name=password]');
 
 let validatorPassLength = new LengthValidator('[name=password]', 6, 20);
+
+let validatorPassBadChara = new DisallowedCharacterValidator('[name=password]', ['-','+','=','`','~','|','/','>','<']);
