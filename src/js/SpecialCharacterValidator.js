@@ -18,18 +18,17 @@ class SpecialCharacterValidator extends Validator {
         let sclChara = ['!','@','#','$','%','^','&','*'];
         console.log(`this.$field.value: `, this.$field.value);
 
+        let sclCharaFound = false;
         for(var i = 0; i != sclChara.length; i++){
             // var sclChara = sclChara[i];
-            if(!(this.$field.value).includes(sclChara[i])){
-                this.errors.push(`Your password needs at least one special character!`);
-                console.log(this.errors)
-            } 
             if((this.$field.value).includes(sclChara[i])){
-                this.errors = [];
+                sclCharaFound = true;
             } 
-
-
-        }   
+        }
+        if(!sclCharaFound){
+            this.errors.push(`You need at least one special character in your password`);
+        }
+  
 
         // if(this.$field.value.includes(`!`)){
         //     this.errors.push(`Remove the ! from your password!`);
