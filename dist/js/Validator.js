@@ -26,6 +26,8 @@ var Validator = function () {
         // }
 
 
+        //try to find existing error container
+        this.$errorContainer = this.$field.parentElement.querySelector('.error-message');
         //make element to show the errors in
         this.$errorContainer = document.createElement('div');
         this.$errorContainer.classList.add('error-message');
@@ -59,9 +61,8 @@ var Validator = function () {
 
             //strings are truthy if they have something in them and falsy if they don't
             //so this validates that it's a string
-            if (this.$field.value) {
+            if (!this.$field.value) {
                 //do nothing
-            } else {
                 this.errors.push("You must fill out the field");
             }
 
@@ -79,15 +80,15 @@ var Validator = function () {
         value: function showErrors() {
             var _this = this;
 
+            this.$errorContainer.innerHTML = "";
             if (this.errors.length) {
                 this.$field.style.borderColor = 'red';
-                this.$errorContainer.innerHTML = "";
+
                 this.errors.forEach(function (error) {
                     _this.$errorContainer.innerHTML += '<p>' + error + '</p>';
                 });
             } else {
                 this.$field.style.borderColor = 'green';
-                this.$errorContainer.innerHTML = "";
             }
         }
     }]);
