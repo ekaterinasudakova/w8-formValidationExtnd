@@ -14,4 +14,6 @@ var validatorPassMatch2 = new MatchValidator('[name=password2]', '[name=password
 var validatorPassLength = new LengthValidator('[name=password]', 6, 20);
 
 var validatorPassBadChara = new DisallowedCharacterValidator('[name=password]', ['-', '+', '=', '`', '~', '|', '/', '>', '<']);
+
+var validatorPassSclChara = new SpecialCharacterValidator('[name=password]');
 //# sourceMappingURL=main.js.map
