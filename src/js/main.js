@@ -18,3 +18,5 @@ let validatorPassBadChara = new DisallowedCharacterValidator('[name=password]', 
 let validatorPassSclChara = new SpecialCharacterValidator('[name=password]');
 
 let validatorPassUpLow = new UpperLowerValidator ('[name=password]');
+
+var validatorRqdChara = new RequiredCharacterValidator ('[name=first-name]', ['!','@','#']);

@@ -18,4 +18,6 @@ var validatorPassBadChara = new DisallowedCharacterValidator('[name=password]', 
 var validatorPassSclChara = new SpecialCharacterValidator('[name=password]');
 
 var validatorPassUpLow = new UpperLowerValidator('[name=password]');
+
+var validatorRqdChara = new RequiredCharacterValidator('[name=first-name]', ['!', '@', '#']);
 //# sourceMappingURL=main.js.map
